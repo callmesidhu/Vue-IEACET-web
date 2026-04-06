@@ -1,0 +1,70 @@
+{
+  "notes": [
+    {
+      "scheme": "2024",
+      "semesters": [
+        {
+          "semester": "Semester 1 & 2",
+          "subjects": [
+            {
+              "name": "Engineering Mathematics I & II",
+              "link": "/notes/2024/maths"
+            },
+            {
+              "name": "Engineering Physics",
+              "link": "/notes/2024/physics"
+            },
+            {
+              "name": "Engineering Chemistry",
+              "link": "/notes/2024/chemistry"
+            }
+          ]
+        },
+        {
+          "semester": "Semester 3",
+          "subjects": [
+            {
+              "name": "Linear Algebra & Complex Analysis",
+              "link": "/notes/2024/la-ca"
+            },
+            {
+              "name": "Mechanics of Solids",
+              "link": "/notes/2024/mos"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scheme": "2019",
+      "semesters": [
+        {
+          "semester": "Semester 1",
+          "subjects": [
+            {
+              "name": "Mathematics I",
+              "link": "/notes/2019/maths1"
+            },
+            {
+              "name": "Physics",
+              "link": "/notes/2019/physics"
+            }
+          ]
+        },
+        {
+          "semester": "Semester 2",
+          "subjects": [
+            {
+              "name": "Mathematics II",
+              "link": "/notes/2019/maths2"
+            },
+            {
+              "name": "Engineering Mechanics",
+              "link": "/notes/2019/mechanics"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

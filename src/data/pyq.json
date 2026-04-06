@@ -1,0 +1,91 @@
+{
+  "semesters": [
+    {
+      "semester": "Semester 1 & 2",
+      "subjects": [
+        {
+          "name": "Engineering Mathematics I & II",
+          "link": "/pyq/sem1-2/maths"
+        },
+        {
+          "name": "Engineering Physics",
+          "link": "/pyq/sem1-2/physics"
+        },
+        {
+          "name": "Engineering Chemistry",
+          "link": "/pyq/sem1-2/chemistry"
+        }
+      ]
+    },
+    {
+      "semester": "Semester 3",
+      "subjects": [
+        {
+          "name": "Linear Algebra & Complex Analysis",
+          "link": "/pyq/sem3/la-ca"
+        },
+        {
+          "name": "Mechanics of Solids",
+          "link": "/pyq/sem3/mos"
+        }
+      ]
+    },
+    {
+      "semester": "Semester 4",
+      "subjects": [
+        {
+          "name": "Thermal Engineering",
+          "link": "/pyq/sem4/thermal"
+        },
+        {
+          "name": "Manufacturing Process",
+          "link": "/pyq/sem4/manufacturing"
+        }
+      ]
+    },
+    {
+      "semester": "Semester 5",
+      "subjects": [
+        {
+          "name": "Operations Research",
+          "link": "/pyq/sem5/or"
+        },
+        {
+          "name": "Machine Design",
+          "link": "/pyq/sem5/md"
+        }
+      ]
+    },
+    {
+      "semester": "Semester 6",
+      "subjects": [
+        {
+          "name": "Quality Engineering",
+          "link": "/pyq/sem6/quality"
+        },
+        {
+          "name": "Supply Chain Management",
+          "link": "/pyq/sem6/scm"
+        }
+      ]
+    },
+    {
+      "semester": "Semester 7",
+      "subjects": [
+        {
+          "name": "Simulation Modeling",
+          "link": "/pyq/sem7/simulation"
+        }
+      ]
+    },
+    {
+      "semester": "Semester 8",
+      "subjects": [
+        {
+          "name": "Project",
+          "link": "/pyq/sem8/project"
+        }
+      ]
+    }
+  ]
+}

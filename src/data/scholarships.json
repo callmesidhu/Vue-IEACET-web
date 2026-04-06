@@ -1,0 +1,54 @@
+{
+  "scholarships": [
+    {
+      "title": "Merit-cum-Means Scholarship",
+      "desc": "Financial assistance for meritorious students from economically weaker sections.",
+      "link": "https://scholarships.gov.in"
+    },
+    {
+      "title": "Alumni Endowment Fund",
+      "desc": "Special grants provided by CET alumni for outstanding projects and research.",
+      "link": "https://cet.ac.in/alumni"
+    },
+    {
+      "title": "State Government Grants",
+      "desc": "Various schemes supporting technical education in Kerala.",
+      "link": "http://www.dtekerala.gov.in"
+    },
+    {
+      "title": "National Scholarship Portal (NSP)",
+      "desc": "Central government scholarships for minority, OBC, SC/ST, and economically weaker students.",
+      "link": "https://scholarships.gov.in"
+    },
+    {
+      "title": "Chief Ministers Distress Relief Fund",
+      "desc": "Emergency financial assistance for students in distress situations.",
+      "link": "https://cmdrf.kerala.gov.in"
+    },
+    {
+      "title": "KVPY Fellowship",
+      "desc": "Kishore Vaigyanik Protsahan Yojana fellowship for science-oriented students.",
+      "link": "http://www.kvpy.iisc.ernet.in"
+    },
+    {
+      "title": "Post-Matric Scholarship (SC/ST)",
+      "desc": "Government scholarship for Scheduled Caste and Scheduled Tribe students pursuing higher education.",
+      "link": "https://e-grantz.kerala.gov.in"
+    },
+    {
+      "title": "AICTE Pragati Scholarship",
+      "desc": "Scholarship for girl students enrolling in technical degree programs.",
+      "link": "https://www.aicte-india.org/schemes/students-development-schemes"
+    },
+    {
+      "title": "Institution of Engineers (India) Award",
+      "desc": "Scholarship from IEI to encourage academic excellence in engineering disciplines.",
+      "link": "https://www.ieindia.org"
+    },
+    {
+      "title": "Inspire Scholarship (DST)",
+      "desc": "Department of Science & Technology scholarship for top percentile students in science streams.",
+      "link": "https://online-inspire.gov.in"
+    }
+  ]
+}

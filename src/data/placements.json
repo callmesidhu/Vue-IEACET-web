@@ -1,0 +1,44 @@
+{
+  "placements": [
+    {
+      "company": "TCS",
+      "count": "15+"
+    },
+    {
+      "company": "Cognizant",
+      "count": "12+"
+    },
+    {
+      "company": "L&T",
+      "count": "5+"
+    },
+    {
+      "company": "Wipro",
+      "count": "10+"
+    },
+    {
+      "company": "Infosys",
+      "count": "8+"
+    },
+    {
+      "company": "HCL Tech",
+      "count": "6+"
+    },
+    {
+      "company": "Bosch",
+      "count": "4+"
+    },
+    {
+      "company": "Siemens",
+      "count": "3+"
+    },
+    {
+      "company": "Accenture",
+      "count": "7+"
+    },
+    {
+      "company": "Deloitte",
+      "count": "5+"
+    }
+  ]
+}

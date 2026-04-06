@@ -1,0 +1,95 @@
+{
+  "schemes": [
+    {
+      "year": "2024",
+      "semesters": [
+        {
+          "id": 1,
+          "title": "Semester 1 & 2",
+          "subjects": [
+            {
+              "name": "Engineering Mathematics I & II",
+              "link": "/2024/maths"
+            },
+            {
+              "name": "Engineering Physics",
+              "link": "/2024/physics"
+            },
+            {
+              "name": "Engineering Chemistry",
+              "link": "/2024/chemistry"
+            },
+            {
+              "name": "Engineering Mechanics",
+              "link": "/2024/mechanics"
+            },
+            {
+              "name": "Engineering Graphics",
+              "link": "/2024/graphics"
+            },
+            {
+              "name": "Basics of Civil & Mechanical Engineering",
+              "link": "/2024/civil-mech"
+            },
+            {
+              "name": "Basics of Electrical & Electronics Engineering",
+              "link": "/2024/eee"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Semester 3",
+          "subjects": [
+            {
+              "name": "Linear Algebra & Complex Analysis",
+              "link": "/2024/la-ca"
+            },
+            {
+              "name": "Mechanics of Solids",
+              "link": "/2024/mos"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "year": "2019",
+      "semesters": [
+        {
+          "id": 1,
+          "title": "Semester 1",
+          "subjects": [
+            {
+              "name": "Mathematics I",
+              "link": "/2019/maths1"
+            },
+            {
+              "name": "Physics",
+              "link": "/2019/physics"
+            },
+            {
+              "name": "Chemistry",
+              "link": "/2019/chemistry"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Semester 2",
+          "subjects": [
+            {
+              "name": "Mathematics II",
+              "link": "/2019/maths2"
+            },
+            {
+              "name": "Engineering Mechanics",
+              "link": "/2019/mechanics"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
