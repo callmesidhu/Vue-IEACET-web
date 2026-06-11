@@ -1,89 +1,118 @@
 {
   "semesters": [
     {
-      "semester": "Semester 1 & 2",
+      "semester": "S1",
       "subjects": [
         {
-          "name": "Engineering Mathematics I & II",
-          "link": "/pyq/sem1-2/maths"
+          "name": "Mathematics",
+          "link": "https://drive.google.com/drive/folders/1JK_RJsYxtek6P0VIP7G4qLPtPwb-8PSs?usp=drive_link"
         },
         {
-          "name": "Engineering Physics",
-          "link": "/pyq/sem1-2/physics"
+          "name": "Chemistry",
+          "link": "https://drive.google.com/drive/folders/1WLb0RbRFXJvAiLb80Gz5g9_HEiDiEqko?usp=drive_link"
         },
         {
-          "name": "Engineering Chemistry",
-          "link": "/pyq/sem1-2/chemistry"
+          "name": "Engineering Mechanics",
+          "link": "https://drive.google.com/drive/folders/1BgboNu3Qmp8biTo7QFzlU2rjDzp35mUG?usp=drive_link"
+        },
+        {
+          "name": "Introduction to Mechanical and Civil Engineering",
+          "link": "https://drive.google.com/drive/folders/1aN7ECT7Ex08CtqBiYBOVtOTKs4theQYd?usp=drive_link"
+        },
+        {
+          "name": "Algorithmic Thinking with Python",
+          "link": "https://drive.google.com/drive/folders/1ybM9VpKdER3tBAudJrNOyiyWXrNQdapW?usp=drive_link"
         }
       ]
     },
     {
-      "semester": "Semester 3",
+      "semester": "S2",
       "subjects": [
         {
-          "name": "Linear Algebra & Complex Analysis",
-          "link": "/pyq/sem3/la-ca"
+          "name": "Mathematics",
+          "link": "https://drive.google.com/drive/folders/1nxM-tEdWDkQTftC3FMtMeDjam20VVMaF?usp=drive_link"
         },
         {
-          "name": "Mechanics of Solids",
-          "link": "/pyq/sem3/mos"
+          "name": "Physics",
+          "link": "https://drive.google.com/drive/folders/1CAWiBdH03aaOVLsfXTzKCyRw8aw3cmre?usp=drive_link"
+        },
+        {
+          "name": "Engineering Graphics",
+          "link": "https://drive.google.com/drive/folders/1NJmf1_Dv4gXs76SALZeFFWBLN8lUfyDc?usp=drive_link"
+        },
+        {
+          "name": "Basic Electrical and Electronics Engineering",
+          "link": "https://drive.google.com/drive/folders/1GouLVlTpRXO_-VOifb_gXQwjvnqFicHp?usp=drive_link"
+        },
+        {
+          "name": "Materials and Manufacturing Engineering",
+          "link": "https://drive.google.com/drive/folders/1HZ1eze3_EgdGZ62y6y6U7lk8v7o9a9fB?usp=drive_link"
+        },
+        {
+          "name": "Engineering Entrepreneurship and Intellectual Property Right",
+          "link": "https://drive.google.com/drive/folders/1MVE_o1rpz5h9O9hkiT_6-9f5ixFLmT8G?usp=drive_link"
         }
       ]
     },
     {
-      "semester": "Semester 4",
+      "semester": "S3",
       "subjects": [
+        {
+          "name": "Mathematics",
+          "link": "https://drive.google.com/drive/folders/1o9RDWgc5TrZx4zVTmcZlvGuhgPJYwMwa?usp=drive_link"
+        },
+        {
+          "name": "Fluid Mechanics and Hydraulic Machinery",
+          "link": "https://drive.google.com/drive/folders/1mTLnoJioSq-u8Xy-jq3WyjIVt9LF4DlO?usp=drive_link"
+        },
         {
           "name": "Thermal Engineering",
-          "link": "/pyq/sem4/thermal"
+          "link": "https://drive.google.com/drive/folders/1-bsGPli8NEn6i3CR-tl2OguU5zqXP8gZ?usp=drive_link"
         },
         {
-          "name": "Manufacturing Process",
-          "link": "/pyq/sem4/manufacturing"
-        }
-      ]
-    },
-    {
-      "semester": "Semester 5",
-      "subjects": [
-        {
-          "name": "Operations Research",
-          "link": "/pyq/sem5/or"
+          "name": "Operations Management",
+          "link": "https://drive.google.com/drive/folders/19AH7QZz_JV5h59vEE0APXdgXvm6oX5NY?usp=drive_link"
         },
         {
-          "name": "Machine Design",
-          "link": "/pyq/sem5/md"
-        }
-      ]
-    },
-    {
-      "semester": "Semester 6",
-      "subjects": [
-        {
-          "name": "Quality Engineering",
-          "link": "/pyq/sem6/quality"
+          "name": "Artificial Intelligence and Data Science",
+          "link": "https://drive.google.com/drive/folders/1pQx7kpEtI19midYUI9aBvyyLW8KXtj2v?usp=drive_link"
         },
         {
-          "name": "Supply Chain Management",
-          "link": "/pyq/sem6/scm"
+          "name": "Economics for Engineers",
+          "link": "https://drive.google.com/drive/folders/1TsFaCzBEhO3bnBw7QRTIbhNrTIurXN-J?usp=drive_link"
         }
       ]
     },
     {
-      "semester": "Semester 7",
+      "semester": "S4",
       "subjects": [
         {
-          "name": "Simulation Modeling",
-          "link": "/pyq/sem7/simulation"
-        }
-      ]
-    },
-    {
-      "semester": "Semester 8",
-      "subjects": [
+          "name": "Mathematics",
+          "link": "https://drive.google.com/drive/folders/1VThZ0y5dagBbEeJuyqI6RXX3f7kC6jUt?usp=drive_link"
+        },
         {
-          "name": "Project",
-          "link": "/pyq/sem8/project"
+          "name": "Theory of Machines and Design",
+          "link": "https://drive.google.com/drive/folders/1KRHoikV2IoY01yAvkUGLtrHOjdQt8wcZ?usp=drive_link"
+        },
+        {
+          "name": "Machine Tools and Digital Manufacturing",
+          "link": "https://drive.google.com/drive/folders/1yCbeIkTWzmTubFEwt7Yr8NITwIXNAOb_?usp=drive_link"
+        },
+        {
+          "name": "Work System Design",
+          "link": "https://drive.google.com/drive/folders/1I5iOpbFmyJI1-YUSSJqVgCUXdjB4AXks?usp=drive_link"
+        },
+        {
+          "name": "Modern Automotive Technologies",
+          "link": "https://drive.google.com/drive/folders/18Ajs9lBSmmjj6UCyfyPB3nA5Eu-0ip8k?usp=drive_link"
+        },
+        {
+          "name": "Robotics and Automation",
+          "link": "https://drive.google.com/drive/folders/1Gs3Y1A9Nmti8hLCmQK2khbDuY-PAEyf4?usp=drive_link"
+        },
+        {
+          "name": "Engineering Ethics and Sustainable Development",
+          "link": "https://drive.google.com/drive/folders/1jFXBVTGK9M82vE52joyv2Hzo_mFRMVB6?usp=drive_link"
         }
       ]
     }
