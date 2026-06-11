@@ -2,11 +2,12 @@
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { Motion } from '@motionone/vue'
-import { Menu, X, ExternalLink } from 'lucide-vue-next'
+import { Menu, X, ExternalLink, Sparkles } from 'lucide-vue-next'
 import logoSrc from '../logo.jpg'
 
 const route = useRoute()
 const isScrolled = ref(false)
+const isAtBottom = ref(false)
 const mobileMenuOpen = ref(false)
 
 const navLinks = [
@@ -23,6 +24,11 @@ const navLinks = [
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50
+  
+  const windowHeight = window.innerHeight
+  const documentHeight = document.documentElement.scrollHeight
+  const scrollTop = window.scrollY || document.documentElement.scrollTop
+  isAtBottom.value = scrollTop + windowHeight >= documentHeight - 10
 }
 
 onMounted(() => {
@@ -175,7 +181,7 @@ watch(() => route.path, () => {
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-white/10 bg-noir-900 py-4 relative z-10">
+    <footer v-if="route.path !== '/ieagpt'" class="border-t border-white/10 bg-noir-900 py-4 relative z-10">
       <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
           <div class="flex items-center gap-3">
@@ -229,5 +235,24 @@ watch(() => route.path, () => {
         </div>
       </div>
     </footer>
+
+    <!-- IEAGPT Floating Button -->
+    <transition
+      enter-active-class="transition duration-300 ease-out"
+      enter-from-class="opacity-0"
+      enter-to-class="opacity-100"
+      leave-active-class="transition duration-300 ease-in"
+      leave-from-class="opacity-100"
+      leave-to-class="opacity-0 pointer-events-none"
+    >
+      <router-link
+        v-show="route.path !== '/ieagpt' && !isAtBottom"
+        to="/ieagpt"
+        class="fixed bottom-6 right-6 z-50 flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-accent text-white font-semibold shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:-translate-y-1 transition-all duration-300 group backdrop-blur-md border border-accent/50"
+      >
+        <Sparkles class="w-5 h-5 text-white" />
+        <span class="inline-block">IEAGPT</span>
+      </router-link>
+    </transition>
   </div>
 </template>

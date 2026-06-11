@@ -26,6 +26,11 @@ const routes = [
     path: '/projects',
     name: 'Projects',
     component: () => import('../pages/Projects.vue')
+  },
+  {
+    path: '/ieagpt',
+    name: 'IEAGPT',
+    component: () => import('../pages/IeaGPT.vue')
   }
 ]
 
