@@ -4,63 +4,118 @@
       "scheme": "2024",
       "semesters": [
         {
-          "semester": "Semester 1 & 2",
+          "semester": "S1",
           "subjects": [
             {
-              "name": "Engineering Mathematics I & II",
-              "link": "/notes/2024/maths"
+              "name": "Mathematics",
+              "link": "https://drive.google.com/drive/folders/16LTVvEcbDofhqEw64XJ5_Xw-S-3HhK99?usp=drive_link"
             },
             {
-              "name": "Engineering Physics",
-              "link": "/notes/2024/physics"
-            },
-            {
-              "name": "Engineering Chemistry",
-              "link": "/notes/2024/chemistry"
-            }
-          ]
-        },
-        {
-          "semester": "Semester 3",
-          "subjects": [
-            {
-              "name": "Linear Algebra & Complex Analysis",
-              "link": "/notes/2024/la-ca"
-            },
-            {
-              "name": "Mechanics of Solids",
-              "link": "/notes/2024/mos"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "scheme": "2019",
-      "semesters": [
-        {
-          "semester": "Semester 1",
-          "subjects": [
-            {
-              "name": "Mathematics I",
-              "link": "/notes/2019/maths1"
-            },
-            {
-              "name": "Physics",
-              "link": "/notes/2019/physics"
-            }
-          ]
-        },
-        {
-          "semester": "Semester 2",
-          "subjects": [
-            {
-              "name": "Mathematics II",
-              "link": "/notes/2019/maths2"
+              "name": "Chemistry",
+              "link": "https://drive.google.com/drive/folders/125Mt6XuCZU8rMSIqOQBOmebvUudiGtHn?usp=drive_link"
             },
             {
               "name": "Engineering Mechanics",
-              "link": "/notes/2019/mechanics"
+              "link": "https://drive.google.com/drive/folders/14Ty-QMoGdwQjzvR_Sja7liqcQ6MtBbAO?usp=drive_link"
+            },
+            {
+              "name": "Introduction to Mechanical and Civil Engineering",
+              "link": "https://drive.google.com/drive/folders/1dQkU4vQ2tnFiafVvXKmyswAd9ZpbrYkH?usp=drive_link"
+            },
+            {
+              "name": "Algorithmic Thinking with Python",
+              "link": "https://drive.google.com/drive/folders/1kWYL6-AO1G7LWgwRX0SUnS3ZbbrQVue1?usp=drive_link"
+            }
+          ]
+        },
+        {
+          "semester": "S2",
+          "subjects": [
+            {
+              "name": "Mathematics",
+              "link": "https://drive.google.com/drive/folders/1nv97hcMPyhQei0NI8Kl8QZDUNKz-r3R0?usp=drive_link"
+            },
+            {
+              "name": "Physics",
+              "link": "https://drive.google.com/drive/folders/1e755v9QQU2CSdQka6otxrLdY7F5F84z0?usp=drive_link"
+            },
+            {
+              "name": "Engineering Graphics",
+              "link": "https://drive.google.com/drive/folders/1Jqaipy4G7BHB4xWTf-cTwNocYQiGuhvx?usp=drive_link"
+            },
+            {
+              "name": "Basic Electrical and Electronics Engineering",
+              "link": "https://drive.google.com/drive/folders/1Wso9IagRQb9DukYdEY4TZvQEKxLprxbb?usp=drive_link"
+            },
+            {
+              "name": "Materials and Manufacturing Engineering",
+              "link": "https://drive.google.com/drive/folders/1Ys3Qd-bi6es0h24R09kKf2t14snIibPd?usp=drive_link"
+            },
+            {
+              "name": "Engineering Entrepreneurship and Intellectual Property Right",
+              "link": "https://drive.google.com/drive/folders/1nYZvb2Q2WoZOmHpwZuMzRXHZ2VVWITCB?usp=drive_link"
+            }
+          ]
+        },
+        {
+          "semester": "S3",
+          "subjects": [
+            {
+              "name": "Mathematics",
+              "link": "https://drive.google.com/drive/folders/1LXXMSUvqn3cH-SNLDyYLMU1v1Q8WDnbS?usp=drive_link"
+            },
+            {
+              "name": "Fluid Mechanics and Hydraulic Machinery",
+              "link": "https://drive.google.com/drive/folders/1fZrf_zYYmjKAQNTWz4Rywhxx9BMYZuTP?usp=drive_link"
+            },
+            {
+              "name": "Thermal Engineering",
+              "link": "https://drive.google.com/drive/folders/1PzrSHrbEPfTTaXpe0vla5CzzTNtsD30j?usp=drive_link"
+            },
+            {
+              "name": "Operations Management",
+              "link": "https://drive.google.com/drive/folders/14EgIGcdnPgVr5Xu0IIJcNM1uo7LyX7I-?usp=drive_link"
+            },
+            {
+              "name": "Artificial Intelligence and Data Science",
+              "link": "https://drive.google.com/drive/folders/1Fmy3wm0dJDnbzvbcXw128a13P9LxyQD6?usp=drive_link"
+            },
+            {
+              "name": "Economics for Engineers",
+              "link": "https://drive.google.com/drive/folders/1-eW62uXd6y9dCNc9GRT15wGJqJpAiOu_?usp=drive_link"
+            }
+          ]
+        },
+        {
+          "semester": "S4",
+          "subjects": [
+            {
+              "name": "Mathematics",
+              "link": "https://drive.google.com/drive/folders/1G53jWx2yVb6qeMgGEn7JUkQuXCnqsh_F?usp=drive_link"
+            },
+            {
+              "name": "Theory of Machines and Design",
+              "link": "https://drive.google.com/drive/folders/1whJkHiqBXzBfSRtfi04NwBbuSFcN4BY3?usp=drive_link"
+            },
+            {
+              "name": "Machine Tools and Digital Manufacturing",
+              "link": "https://drive.google.com/drive/folders/1h5kDMGdwTR-Uf37cYxYUNMeAjSM5jonc?usp=drive_link"
+            },
+            {
+              "name": "Work System Design",
+              "link": "https://drive.google.com/drive/folders/1lOcEbt0KHsvE-hpqN0zalvJLnqFuIU2D?usp=drive_link"
+            },
+            {
+              "name": "Modern Automotive Technologies",
+              "link": "https://drive.google.com/drive/folders/1vLU4wamzxb5aBM2DwhiRiuDQiQHPR2l4?usp=drive_link"
+            },
+            {
+              "name": "Robotics and Automation",
+              "link": "https://drive.google.com/drive/folders/1Ns3YFEWK9yCEZ522LpLr2xNBamfNpR0L?usp=drive_link"
+            },
+            {
+              "name": "Engineering Ethics and Sustainable Development",
+              "link": "https://drive.google.com/drive/folders/1TOUDvq60OGiPwWpCoIye9qqhAxV63YfR?usp=drive_link"
             }
           ]
         }

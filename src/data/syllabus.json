@@ -5,89 +5,23 @@
       "semesters": [
         {
           "id": 1,
-          "title": "Semester 1 & 2",
-          "subjects": [
-            {
-              "name": "Engineering Mathematics I & II",
-              "link": "/2024/maths"
-            },
-            {
-              "name": "Engineering Physics",
-              "link": "/2024/physics"
-            },
-            {
-              "name": "Engineering Chemistry",
-              "link": "/2024/chemistry"
-            },
-            {
-              "name": "Engineering Mechanics",
-              "link": "/2024/mechanics"
-            },
-            {
-              "name": "Engineering Graphics",
-              "link": "/2024/graphics"
-            },
-            {
-              "name": "Basics of Civil & Mechanical Engineering",
-              "link": "/2024/civil-mech"
-            },
-            {
-              "name": "Basics of Electrical & Electronics Engineering",
-              "link": "/2024/eee"
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "title": "Semester 3",
-          "subjects": [
-            {
-              "name": "Linear Algebra & Complex Analysis",
-              "link": "/2024/la-ca"
-            },
-            {
-              "name": "Mechanics of Solids",
-              "link": "/2024/mos"
-            }
-          ]
-        }
-      ]
-    },
-
-    {
-      "year": "2019",
-      "semesters": [
-        {
-          "id": 1,
           "title": "Semester 1",
-          "subjects": [
-            {
-              "name": "Mathematics I",
-              "link": "/2019/maths1"
-            },
-            {
-              "name": "Physics",
-              "link": "/2019/physics"
-            },
-            {
-              "name": "Chemistry",
-              "link": "/2019/chemistry"
-            }
-          ]
+          "syllabus": "https://drive.google.com/file/d/1To0FC1u0Q86ewkaTnsYGdMfNAPxh08Pw/view"
         },
         {
           "id": 2,
           "title": "Semester 2",
-          "subjects": [
-            {
-              "name": "Mathematics II",
-              "link": "/2019/maths2"
-            },
-            {
-              "name": "Engineering Mechanics",
-              "link": "/2019/mechanics"
-            }
-          ]
+          "syllabus": "https://drive.google.com/file/d/1bKpZvlIaF4Dq5lTbw4-GM3L-xcXo2QuT/view"
+        },
+        {
+          "id": 3,
+          "title": "Semester 3",
+          "syllabus": "https://drive.google.com/file/d/1pMT8Y-_1JB4UfKTBnbGNdw_Alj1QGCGV/view"
+        },
+        {
+          "id": 4,
+          "title": "Semester 4",
+          "syllabus": "https://drive.google.com/file/d/1eIX3Qo3TSL8xLG6d0QxoHK59SI4Jaxmi/view"
         }
       ]
     }
