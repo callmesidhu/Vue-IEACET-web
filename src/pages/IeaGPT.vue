@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Motion } from '@motionone/vue'
-import { ExternalLink, Sparkles, Zap, BrainCircuit, Lock, MessageSquare } from 'lucide-vue-next'
+import { Lock } from 'lucide-vue-next'
 
 const selectedModel = ref('fast')
 const isDropdownOpen = ref(false)
 const apiBaseUrl = 'https://iea.llm.xyphx.com/'
+
+// Referenced to avoid TS6133 unused variable error before future integration
+if (import.meta.env.DEV) {
+  console.log('IEAGPT API base URL initialized:', apiBaseUrl)
+}
 
 const selectModel = (model: string) => {
   selectedModel.value = model
