@@ -21,129 +21,123 @@ const toggleExpand = (id: number) => {
 </script>
 
 <template>
-  <div class="pt-32 pb-20 min-h-screen bg-noir-900 relative overflow-hidden">
-    <!-- Background Grid & Glows -->
-    <div class="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
-    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+  <div class="pt-32 pb-20 min-h-screen bg-zinc-950 text-zinc-50 relative overflow-hidden">
+    <!-- Extremely subtle grid overlay -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-[0.25] pointer-events-none" />
 
     <div class="container mx-auto px-6 relative z-10">
       <Motion
-        :initial="{ opacity: 0, y: 20 }"
+        :initial="{ opacity: 0, y: 15 }"
         :animate="{ opacity: 1, y: 0 }"
-        class="max-w-3xl mx-auto text-center mb-16"
+        class="max-w-5xl mx-auto text-center mb-16"
       >
-        <span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/20 tracking-wider uppercase mb-6 inline-block">
-          Official Curriculum
-        </span>
-        <h1 class="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tight text-white">
+        <span class="text-xs font-mono font-medium tracking-widest text-zinc-500 uppercase mb-4 inline-block">
           Syllabus & Course Scheme
+        </span>
+        <h1 class="text-4xl md:text-5xl font-sans font-bold mb-6 tracking-tight text-zinc-50">
+          Curriculum
         </h1>
-        <p class="text-lg text-slate-light mb-10 max-w-xl mx-auto">
+        <p class="text-base text-zinc-400 mb-10 max-w-xl mx-auto leading-relaxed">
           Comprehensive curriculum structure and official syllabus breakdown for B.Tech Industrial Engineering.
         </p>
 
         <SchemeSelector
           v-model:activeScheme="activeScheme"
-          class="mb-8 p-1 bg-noir-800/80 backdrop-blur-xl border border-white/5 rounded-2xl shadow-xl"
+          class="mb-8"
         />
       </Motion>
 
-      <div class="max-w-3xl mx-auto space-y-4">
+      <div class="max-w-5xl mx-auto">
         <AnimatePresence mode="wait">
           <Motion
             :key="activeScheme"
-            :initial="{ opacity: 0, y: 15 }"
+            :initial="{ opacity: 0, y: 10 }"
             :animate="{ opacity: 1, y: 0 }"
-            :exit="{ opacity: 0, y: -15 }"
-            :transition="{ duration: 0.3 }"
+            :exit="{ opacity: 0, y: -10 }"
+            :transition="{ duration: 0.2 }"
             class="space-y-4"
           >
-            <div v-if="semesters.length === 0" class="glass-card rounded-2xl p-16 text-center border border-white/10 shadow-2xl relative overflow-hidden">
-              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-accent/50 to-transparent" />
-              <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/5 mb-6 text-slate-light">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <!-- Empty Placeholder -->
+            <div v-if="semesters.length === 0" class="border border-zinc-800 bg-zinc-900/30 rounded-xl p-16 text-center shadow-sm relative overflow-hidden">
+              <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 mb-6 text-zinc-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 class="text-2xl font-display font-bold text-white mb-3">Will be updated soon</h3>
-              <p class="text-slate-light text-sm max-w-sm mx-auto leading-relaxed">
+              <h3 class="text-lg font-sans font-semibold text-zinc-200 mb-2">Will be updated soon</h3>
+              <p class="text-zinc-400 text-sm max-w-sm mx-auto leading-relaxed">
                 We are currently compiling and verifying the official resource files for the 2019 Scheme. Please check back shortly.
               </p>
             </div>
             
-            <div
-              v-else
-              v-for="sem in semesters"
-              :key="`${activeScheme}-${sem.id}`"
-              class="glass-card rounded-2xl overflow-hidden border transition-all duration-300 relative"
-              :class="expandedId === sem.id ? 'border-accent/40 bg-noir-850/80 shadow-[0_10px_35px_rgba(59,130,246,0.05)]' : 'border-white/10 hover:border-white/20 hover:bg-white/[0.01]'"
-            >
-              <!-- Left accent glow bar -->
-              <div 
-                class="absolute left-0 top-0 bottom-0 w-1 transition-all duration-300"
-                :class="expandedId === sem.id ? 'bg-accent shadow-[0_0_15px_#3b82f6]' : 'bg-transparent'"
-              />
-
-              <button
-                @click="toggleExpand(sem.id)"
-                class="w-full px-6 py-5 flex items-center justify-between text-left transition-colors"
-                :class="{ 'bg-white/[0.02]': expandedId === sem.id }"
+            <!-- Semesters Accordion -->
+            <div v-else class="border border-zinc-800 bg-zinc-900/20 rounded-xl divide-y divide-zinc-800 overflow-hidden shadow-sm">
+              <div
+                v-for="sem in semesters"
+                :key="`${activeScheme}-${sem.id}`"
+                class="transition-all duration-200"
               >
-                <div class="flex items-center gap-4">
-                  <div 
-                    class="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300"
-                    :class="expandedId === sem.id ? 'bg-accent/20 text-accent' : 'bg-white/5 text-slate-light'"
-                  >
-                    <BookOpen class="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 class="text-lg md:text-xl font-display font-bold text-white transition-colors" :class="{ 'text-accent': expandedId === sem.id }">
-                      {{ sem.title }}
-                    </h3>
-                    <span class="text-xs text-slate-light font-medium">{{ activeScheme }} Scheme</span>
-                  </div>
-                </div>
-                <div class="flex items-center gap-3">
-                  <span v-if="expandedId !== sem.id" class="text-xs text-slate-light/60 font-medium hidden sm:inline-block">View details</span>
-                  <Motion
-                    :animate="{ rotate: expandedId === sem.id ? 180 : 0 }"
-                    :transition="{ duration: 0.3 }"
-                  >
-                    <ChevronDown class="text-slate-light w-5 h-5" />
-                  </Motion>
-                </div>
-              </button>
-
-              <div 
-                class="grid transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]"
-                :class="expandedId === sem.id ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
-              >
-                <div class="overflow-hidden">
-                  <div 
-                    class="px-6 pb-6 pt-5 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-6 bg-white/[0.01] transition-all duration-300 transform"
-                    :class="expandedId === sem.id ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0'"
-                  >
-                    <div class="max-w-md">
-                      <p class="text-slate-light text-sm leading-relaxed mb-1">
-                        Official curriculum and course contents approved by the university.
-                      </p>
-                      <div class="flex items-center gap-2 mt-2">
-                        <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-white/5 text-slate-light border border-white/10">Format: PDF</span>
-                        <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-accent/10 text-accent border border-accent/20">Verified</span>
-                      </div>
-                    </div>
-                    <a
-                      :href="sem.syllabus"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-[0_4px_20px_rgba(59,130,246,0.25)] hover:shadow-[0_4px_25px_rgba(59,130,246,0.45)] hover:bg-accent/90 active:scale-[0.98] transition-all text-sm w-full sm:w-auto"
+                <button
+                  @click="toggleExpand(sem.id)"
+                  class="w-full px-8 py-6 flex items-center justify-between text-left transition-colors bg-transparent hover:bg-zinc-900/40 group"
+                  :class="{ 'bg-zinc-900/20': expandedId === sem.id }"
+                >
+                  <div class="flex items-center gap-5">
+                    <div 
+                      class="w-10 h-10 rounded-lg flex items-center justify-center border transition-all duration-200 flex-shrink-0"
+                      :class="expandedId === sem.id 
+                        ? 'bg-zinc-900 border-zinc-700 text-white' 
+                        : 'bg-zinc-950/40 border-zinc-800 text-zinc-400 group-hover:border-zinc-700'"
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                      Open Syllabus PDF
-                    </a>
+                      <BookOpen class="w-5 h-5 text-current" />
+                    </div>
+                    <div>
+                      <h3 class="text-lg font-sans font-semibold text-zinc-200 transition-colors" :class="{ 'text-white': expandedId === sem.id }">
+                        {{ sem.title }}
+                      </h3>
+                      <span class="text-xs text-zinc-500 font-mono font-medium">{{ activeScheme }} Scheme</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span v-if="expandedId !== sem.id" class="text-xs text-zinc-500 font-medium hidden sm:inline-block">View details</span>
+                    <Motion
+                      :animate="{ rotate: expandedId === sem.id ? 180 : 0 }"
+                      :transition="{ duration: 0.2 }"
+                    >
+                      <ChevronDown class="text-zinc-500 w-4 h-4" />
+                    </Motion>
+                  </div>
+                </button>
+
+                <div 
+                  class="grid transition-all duration-200 ease-in-out"
+                  :class="expandedId === sem.id ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
+                >
+                  <div class="overflow-hidden">
+                    <div 
+                      class="px-8 py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-6 bg-zinc-950/40"
+                    >
+                      <div class="max-w-md">
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-1.5">
+                          Official curriculum and course contents approved by the university.
+                        </p>
+                        <div class="flex items-center gap-2">
+                          <span class="inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-mono font-medium bg-zinc-900 text-zinc-400 border border-zinc-800">PDF Document</span>
+                          <span class="inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-mono font-medium bg-zinc-900/80 text-zinc-400 border border-zinc-800">Verified</span>
+                        </div>
+                      </div>
+                      <a
+                        :href="sem.syllabus"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-100 text-zinc-950 font-medium hover:bg-zinc-200 active:scale-[0.98] transition-all text-xs w-full sm:w-auto shadow-sm"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        Open Syllabus
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

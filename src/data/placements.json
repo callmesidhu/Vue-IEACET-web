@@ -1,44 +1,60 @@
 {
   "placements": [
     {
-      "company": "TCS",
-      "count": "15+"
+      "company": "KPMG",
+      "count": "1"
     },
     {
-      "company": "Cognizant",
-      "count": "12+"
+      "company": "Guidehouse",
+      "count": "3"
+    },
+    {
+      "company": "LTIMindtree",
+      "count": "1"
     },
     {
       "company": "L&T",
-      "count": "5+"
+      "count": "2"
     },
     {
-      "company": "Wipro",
-      "count": "10+"
+      "company": "JSW",
+      "count": "4"
     },
     {
-      "company": "Infosys",
-      "count": "8+"
+      "company": "Royal Enfield",
+      "count": "2"
     },
     {
-      "company": "HCL Tech",
-      "count": "6+"
+      "company": "Stellantis",
+      "count": "1"
     },
     {
-      "company": "Bosch",
-      "count": "4+"
+      "company": "South Indian Bank",
+      "count": "1"
     },
     {
-      "company": "Siemens",
-      "count": "3+"
+      "company": "SADA India",
+      "count": "4"
     },
     {
-      "company": "Accenture",
-      "count": "7+"
+      "company": "Polycab",
+      "count": "3"
     },
     {
-      "company": "Deloitte",
-      "count": "5+"
+      "company": "Sobha Constructions",
+      "count": "2"
+    },
+    {
+      "company": "TIG",
+      "count": "3"
+    },
+    {
+      "company": "Averixis Solutions",
+      "count": "4"
+    },
+    {
+      "company": "Aakash",
+      "count": "1"
     }
   ]
 }

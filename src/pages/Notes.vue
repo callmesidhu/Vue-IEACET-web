@@ -48,173 +48,161 @@ const openNoteLink = (url: string) => {
 </script>
 
 <template>
-  <div class="pt-32 pb-20 min-h-screen bg-noir-900 relative overflow-hidden">
-    <!-- Glow Spots -->
-    <div class="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
-    <div class="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[150px] pointer-events-none" />
-    <div class="absolute bottom-10 left-10 w-96 h-96 bg-accent/5 rounded-full blur-[150px] pointer-events-none" />
+  <div class="pt-32 pb-20 min-h-screen bg-zinc-950 text-zinc-50 relative overflow-hidden">
+    <!-- Extremely subtle grid overlay -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-[0.25] pointer-events-none" />
 
     <div class="container mx-auto px-6 relative z-10">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+      <div class="max-w-5xl mx-auto">
         <Motion
-          :initial="{ opacity: 0, x: -20 }"
-          :animate="{ opacity: 1, x: 0 }"
-          class="flex-1"
+          :initial="{ opacity: 0, y: 15 }"
+          :animate="{ opacity: 1, y: 0 }"
+          class="max-w-5xl mx-auto text-center mb-12"
         >
-          <span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/20 tracking-wider uppercase mb-6 inline-block">
+          <span class="text-xs font-mono font-medium tracking-widest text-zinc-500 uppercase mb-4 inline-block">
             Study Resources
           </span>
-          <h1 class="text-4xl md:text-6xl font-display font-bold mb-4 tracking-tight text-white">
+          <h1 class="text-4xl md:text-5xl font-sans font-bold mb-6 tracking-tight text-zinc-50">
             Study Notes & Materials
           </h1>
-          <p class="text-lg text-slate-light mb-8 max-w-xl">
+          <p class="text-base text-zinc-400 mb-8 max-w-xl mx-auto leading-relaxed">
             Curated study notes, reference materials, and textbook drives for your coursework.
           </p>
-          
-          <SchemeSelector
-            :activeScheme="activeScheme"
-            @update:activeScheme="handleSchemeChange"
-            class="p-1 bg-noir-800/80 backdrop-blur-xl border border-white/5 rounded-2xl shadow-xl"
-          />
-        </Motion>
 
-        <Motion
-          :initial="{ opacity: 0, x: 20 }"
-          :animate="{ opacity: 1, x: 0 }"
-          class="w-full md:w-80"
-        >
-          <div class="relative w-full">
-            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <Search class="h-5 w-5 text-slate-light" />
+          <!-- Search Bar & Scheme Selector -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto">
+            <div class="relative w-full sm:flex-1">
+              <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <Search class="h-4 w-4 text-zinc-500" />
+              </div>
+              <input
+                v-model="searchQuery"
+                type="text"
+                class="block w-full pl-10 pr-4 py-2.5 bg-zinc-900 border border-zinc-800 rounded-lg text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-zinc-700 transition-all shadow-sm text-sm"
+                placeholder="Search subjects..."
+              />
             </div>
-            <input
-              v-model="searchQuery"
-              type="text"
-              class="block w-full pl-12 pr-4 py-3.5 bg-noir-800 border border-white/10 rounded-2xl text-white placeholder-slate-light focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-transparent transition-all text-sm shadow-inner"
-              placeholder="Search subjects..."
+            <SchemeSelector
+              :activeScheme="activeScheme"
+              @update:activeScheme="handleSchemeChange"
+              class="w-full sm:w-auto p-1 bg-zinc-900 border border-zinc-800 rounded-xl"
             />
           </div>
         </Motion>
-      </div>
 
-      <div class="space-y-6">
-        <!-- Will be updated soon (2019 Scheme Placeholder) -->
-        <div v-if="semesters.length === 0" class="glass-card rounded-3xl p-16 text-center border border-white/10 shadow-2xl relative overflow-hidden">
-          <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-accent/50 to-transparent" />
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/5 mb-6 text-slate-light">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+        <div class="space-y-6">
+          <!-- Will be updated soon (2019 Scheme Placeholder) -->
+          <div v-if="semesters.length === 0" class="border border-zinc-800 bg-zinc-900/30 rounded-xl p-16 text-center shadow-sm relative overflow-hidden">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 mb-6 text-zinc-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-sans font-semibold text-zinc-200 mb-2">Will be updated soon</h3>
+            <p class="text-zinc-400 text-sm max-w-sm mx-auto leading-relaxed">
+              Study materials and notes for the 2019 Scheme are currently being prepared and will be uploaded soon.
+            </p>
           </div>
-          <h3 class="text-2xl font-display font-bold text-white mb-3">Will be updated soon</h3>
-          <p class="text-slate-light text-sm max-w-sm mx-auto leading-relaxed">
-            Study materials and notes for the 2019 Scheme are currently being prepared and will be uploaded soon.
-          </p>
-        </div>
 
-        <!-- No results found (Search Empty state) -->
-        <div v-else-if="filteredSemesters.length === 0" class="glass-card rounded-3xl p-16 text-center border border-white/10 shadow-2xl relative overflow-hidden">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/5 mb-6 text-slate-light">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-dasharray="none" stroke-width="1.5">
-              <circle cx="11" cy="11" r="8" stroke="currentColor"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor"></line>
-            </svg>
+          <!-- No results found (Search Empty state) -->
+          <div v-else-if="filteredSemesters.length === 0" class="border border-zinc-800 bg-zinc-900/30 rounded-xl p-16 text-center shadow-sm relative overflow-hidden">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 mb-6 text-zinc-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-dasharray="none" stroke-width="1.5">
+                <circle cx="11" cy="11" r="8" stroke="currentColor"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor"></line>
+              </svg>
+            </div>
+            <h3 class="text-lg font-sans font-semibold text-zinc-200 mb-2">No results found</h3>
+            <p class="text-zinc-400 text-sm max-w-sm mx-auto leading-relaxed">
+              We couldn't find any notes matching "{{ searchQuery }}". Try checking your spelling or search term.
+            </p>
           </div>
-          <h3 class="text-2xl font-display font-bold text-white mb-3">No results found</h3>
-          <p class="text-slate-light text-sm max-w-sm mx-auto leading-relaxed">
-            We couldn't find any notes matching "{{ searchQuery }}". Try checking your spelling or search term.
-          </p>
-        </div>
 
-        <!-- Semesters List -->
-        <div
-          v-else
-          v-for="(sem, semIdx) in filteredSemesters"
-          :key="`${activeScheme}-${sem.semester}`"
-          class="glass-card rounded-3xl overflow-hidden border transition-all duration-300 relative"
-          :class="(expandedSemester === sem.semester || isSearching) ? 'border-accent/40 bg-noir-850/80 shadow-[0_10px_35px_rgba(59,130,246,0.05)]' : 'border-white/5 hover:border-white/10 hover:bg-white/[0.01]'"
-        >
-          <!-- Left accent glow bar -->
-          <div 
-            class="absolute left-0 top-0 bottom-0 w-1 transition-all duration-300"
-            :class="(expandedSemester === sem.semester || isSearching) ? 'bg-accent shadow-[0_0_15px_#3b82f6]' : 'bg-transparent'"
-          />
-
-          <Motion
-            :initial="{ opacity: 0, y: 15 }"
-            :animate="{ opacity: 1, y: 0 }"
-            :transition="{ delay: semIdx * 0.05 }"
-          >
-            <button
-              @click="toggleExpand(sem.semester)"
-              class="w-full px-8 py-6 flex items-center justify-between text-left transition-colors"
-              :class="{ 'bg-white/[0.02]': (expandedSemester === sem.semester || isSearching) }"
+          <!-- Semesters Accordion -->
+          <div v-else class="border border-zinc-800 bg-zinc-900/20 rounded-xl divide-y divide-zinc-800 overflow-hidden shadow-sm">
+            <div
+              v-for="(sem, semIdx) in filteredSemesters"
+              :key="`${activeScheme}-${sem.semester}`"
+              class="transition-all duration-200"
             >
-              <div class="flex items-center gap-4">
-                <div 
-                  class="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300"
-                  :class="(expandedSemester === sem.semester || isSearching) ? 'bg-accent/20 text-accent' : 'bg-white/5 text-slate-light'"
+              <Motion
+                :initial="{ opacity: 0, y: 10 }"
+                :animate="{ opacity: 1, y: 0 }"
+                :transition="{ delay: semIdx * 0.03 }"
+              >
+                <button
+                  @click="toggleExpand(sem.semester)"
+                  class="w-full px-8 py-6 flex items-center justify-between text-left transition-colors bg-transparent hover:bg-zinc-900/40 group"
+                  :class="{ 'bg-zinc-900/20': (expandedSemester === sem.semester || isSearching) }"
                 >
-                  <FileText class="w-5 h-5" />
-                </div>
-                <div>
-                  <h2 class="text-xl md:text-2xl font-display font-bold text-white transition-colors" :class="{ 'text-accent': (expandedSemester === sem.semester || isSearching) }">
-                    {{ sem.semester }}
-                  </h2>
-                  <span class="text-xs text-slate-light font-medium">{{ activeScheme }} Scheme</span>
-                </div>
-              </div>
-              <div class="flex items-center gap-4">
-                <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-white/5 text-slate-light border border-white/10">
-                  {{ sem.subjects.length }} Subject{{ sem.subjects.length > 1 ? 's' : '' }}
-                </span>
-                <Motion
-                  :animate="{ rotate: (expandedSemester === sem.semester || isSearching) ? 180 : 0 }"
-                  :transition="{ duration: 0.3 }"
-                >
-                  <ChevronDown class="text-slate-light w-5 h-5" />
-                </Motion>
-              </div>
-            </button>
-
-            <div 
-              class="grid transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]"
-              :class="(expandedSemester === sem.semester || isSearching) ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
-            >
-              <div class="overflow-hidden">
-                <div 
-                  class="px-8 pb-8 pt-4 border-t border-white/5 bg-white/[0.005] transition-all duration-300 transform"
-                  :class="(expandedSemester === sem.semester || isSearching) ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0'"
-                >
-                  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
-                    <div
-                      v-for="(subject, subIdx) in sem.subjects"
-                      :key="subIdx"
-                      @click="openNoteLink(subject.link)"
-                      class="bg-white/5 p-6 rounded-2xl group hover:bg-accent/15 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(59,130,246,0.1)] border border-transparent hover:border-accent/20 transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col justify-between min-h-[150px]"
+                  <div class="flex items-center gap-5">
+                    <div 
+                      class="w-10 h-10 rounded-lg flex items-center justify-center border transition-all duration-200 flex-shrink-0"
+                      :class="(expandedSemester === sem.semester || isSearching) 
+                        ? 'bg-zinc-900 border-zinc-700 text-white' 
+                        : 'bg-zinc-950/40 border-zinc-800 text-zinc-400 group-hover:border-zinc-700'"
                     >
-                      <div>
-                        <div class="flex items-center justify-between mb-3">
-                          <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-white/5 text-slate-light border border-white/10 group-hover:bg-accent/20 group-hover:text-accent group-hover:border-accent/30 transition-colors">
-                            Resource folder
-                          </span>
+                      <FileText class="w-5 h-5 text-current" />
+                    </div>
+                    <div>
+                      <h2 class="text-lg font-sans font-semibold text-zinc-200 transition-colors" :class="{ 'text-white': (expandedSemester === sem.semester || isSearching) }">
+                        Semester {{ sem.semester.replace('S', '') }}
+                      </h2>
+                      <span class="text-xs text-zinc-500 font-mono font-medium">{{ activeScheme }} Scheme</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <span class="text-xs font-mono font-medium px-2 py-0.5 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">
+                      {{ sem.subjects.length }} subject{{ sem.subjects.length > 1 ? 's' : '' }}
+                    </span>
+                    <Motion
+                      :animate="{ rotate: (expandedSemester === sem.semester || isSearching) ? 180 : 0 }"
+                      :transition="{ duration: 0.2 }"
+                    >
+                      <ChevronDown class="text-zinc-500 w-4 h-4" />
+                    </Motion>
+                  </div>
+                </button>
+
+                <div 
+                  class="grid transition-all duration-200 ease-in-out"
+                  :class="(expandedSemester === sem.semester || isSearching) ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
+                >
+                  <div class="overflow-hidden">
+                    <div 
+                      class="px-8 py-6 bg-zinc-950/40"
+                    >
+                      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-2">
+                        <div
+                          v-for="(subject, subIdx) in sem.subjects"
+                          :key="subIdx"
+                          @click="openNoteLink(subject.link)"
+                          class="bg-zinc-900/40 hover:bg-zinc-900/80 p-6 rounded-lg border border-zinc-800 hover:border-zinc-700 transition-colors duration-200 cursor-pointer flex flex-col justify-between min-h-[150px] shadow-sm relative group"
+                        >
+                          <div>
+                            <div class="flex items-center justify-between mb-3">
+                              <span class="inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-mono font-medium bg-zinc-950 text-zinc-400 border border-zinc-800 group-hover:border-zinc-700 transition-colors">
+                                Drive Folder
+                              </span>
+                            </div>
+                            <h3 class="text-sm font-sans font-semibold text-zinc-200 group-hover:text-white transition-colors leading-snug">
+                              {{ subject.name }}
+                            </h3>
+                          </div>
+                          <div class="flex items-center justify-between text-[11px] mt-4 pt-3 border-t border-zinc-800/60">
+                            <span class="text-zinc-500">Google Drive</span>
+                            <span class="flex items-center gap-1 text-zinc-350 hover:text-white transition-colors font-medium">
+                              Access <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                            </span>
+                          </div>
                         </div>
-                        <h3 class="text-lg font-display font-bold text-white group-hover:text-accent transition-colors leading-snug">
-                          {{ subject.name }}
-                        </h3>
-                      </div>
-                      <div class="flex items-center justify-between text-xs mt-6 pt-4 border-t border-white/5">
-                        <span class="text-slate-light/60 group-hover:text-slate-light transition-colors">Open Google Drive</span>
-                        <span class="flex items-center gap-1.5 text-accent font-semibold">
-                          Access <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                        </span>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Motion>
             </div>
-          </Motion>
+          </div>
         </div>
       </div>
     </div>

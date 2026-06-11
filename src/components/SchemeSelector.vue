@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Motion } from '@motionone/vue'
-
 type Scheme = '2024' | '2019'
 
 interface Props {
@@ -22,27 +20,19 @@ const setScheme = (scheme: Scheme) => {
 
 <template>
   <div
-    :class="`inline-flex p-1 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 ${className || ''}`"
+    :class="`inline-flex h-11 items-center justify-center rounded-xl bg-zinc-900/80 p-1 text-zinc-400 border border-zinc-800/80 shadow-md ${className || ''}`"
   >
     <button
       v-for="scheme in schemes"
       :key="scheme"
       @click="setScheme(scheme)"
-      class="relative px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 overflow-hidden"
+      class="inline-flex items-center justify-center whitespace-nowrap rounded-lg px-5 py-2 text-sm font-sans font-semibold transition-all duration-200"
+      :class="activeScheme === scheme 
+        ? 'bg-zinc-950 text-white border border-zinc-800/80 shadow-sm' 
+        : 'hover:text-zinc-200'"
     >
-      <Motion
-        v-if="activeScheme === scheme"
-        layoutId="activeScheme"
-        class="absolute inset-0 bg-accent shadow-[0_0_15px_rgba(59,130,246,0.5)]"
-        :transition="{ type: 'spring', bounce: 0.2, duration: 0.6 }"
-      />
-      <span
-        :class="`relative z-10 ${
-          activeScheme === scheme ? 'text-white' : 'text-slate-light hover:text-white'
-        }`"
-      >
-        {{ scheme }} Scheme
-      </span>
+      {{ scheme }} Scheme
     </button>
   </div>
 </template>
+
