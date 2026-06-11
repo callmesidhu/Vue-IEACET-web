@@ -193,7 +193,7 @@ watch(() => route.path, () => {
           <!-- Social links -->
           <div class="flex items-center gap-3">
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/company/iea-cet/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -204,7 +204,7 @@ watch(() => route.path, () => {
               </svg>
             </a>
             <a
-              href="https://www.github.com"
+              href="https://github.com/IEACET"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -215,7 +215,7 @@ watch(() => route.path, () => {
               </svg>
             </a>
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/iea_cet/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"

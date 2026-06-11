@@ -11,7 +11,6 @@ import {
   Briefcase,
   GraduationCap,
   ExternalLink,
-  MessageCircle,
   Linkedin,
   Instagram
 } from 'lucide-vue-next'
@@ -78,6 +77,30 @@ const resources = [
 
 const placements = placementData.placements
 const scholarships = scholarshipData.scholarships
+
+const contacts = [
+  {
+    name: 'Nandikesh V',
+    role: 'Student Representative',
+    linkedin: 'https://www.linkedin.com/in/nandikesh-venu-270b2225b/',
+    whatsapp: 'https://wa.me/918891192325',
+    instagram: 'https://www.instagram.com/nandikeshhh/'
+  },
+  {
+    name: 'Noel Denny Pulikottil',
+    role: 'Coordinator',
+    linkedin: 'https://www.linkedin.com/in/noel-denny-pulikottil-481a30275/',
+    whatsapp: 'https://wa.me/918714024650',
+    instagram: 'https://www.instagram.com/noeldpulikottil/'
+  },
+  {
+    name: 'S Sidharth',
+    role: 'Web Lead',
+    linkedin: 'https://www.linkedin.com/in/callmesidhu/',
+    whatsapp: 'https://wa.me/919494225620',
+    instagram: 'https://www.linkedin.com/in/callmesidhu/'
+  }
+]
 </script>
 
 <template>
@@ -144,23 +167,7 @@ const scholarships = scholarshipData.scholarships
           as="p"
           class="text-lg md:text-2xl text-slate-light leading-relaxed font-light text-justify"
         >
-          Industrial Engineering at the College of Engineering Thiruvananthapuram... 
-          (Brief version for brevity, but I will include the full text in actual file)
-          Industrial Engineering at the College of Engineering
-          Thiruvananthapuram, the pioneering institution in Kerala
-          Technological University, stands as the sole provider of this
-          esteemed course, cementing its status as the first engineering
-          college in Kerala. This program, a sub-branch of mechanical
-          engineering, epitomizes modern industrial operations by integrating
-          engineering principles with management techniques. It empowers
-          students with a holistic grasp of manufacturing processes, supply
-          chain management, operations research, and quality control,
-          fostering analytical, problem-solving, and leadership skills crucial
-          for success in today's competitive industrial landscape. Graduates
-          emerge as sought-after professionals, capable of driving
-          organizational excellence across diverse sectors, from manufacturing
-          to healthcare and technology, positioning them as catalysts for
-          impactful change.
+          College of Engineering Thiruvananthapuram offers the only Industrial Engineering program under Kerala Technological University. As a branch of mechanical engineering, the course combines engineering and management principles to improve industrial operations. Students gain knowledge in manufacturing, supply chain management, operations research, and quality control while developing analytical, problem-solving, and leadership skills. Graduates are prepared for diverse industries such as manufacturing, healthcare, and technology.
         </Motion>
       </div>
     </section>
@@ -349,11 +356,7 @@ const scholarships = scholarshipData.scholarships
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-8">
           <Motion
-            v-for="(contact, index) in [
-              { name: 'Nandikesh', role: 'Student Representative' },
-              { name: 'Noel Denny', role: 'Coordinator' },
-              { name: 'Sidharth', role: 'Web Lead' }
-            ]"
+            v-for="(contact, index) in contacts"
             :key="contact.name"
             :initial="{ opacity: 0, y: 20 }"
             :in-view="{ opacity: 1, y: 0 }"
@@ -367,14 +370,16 @@ const scholarships = scholarshipData.scholarships
             <h3 class="text-xl font-display text-white mb-6">
               {{ contact.name }}
             </h3>
-            <div class="flex gap-4">
-              <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent transition-all group">
-                <MessageCircle class="w-5 h-5 text-slate-light group-hover:text-black" />
-              </a>
-              <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent transition-all group">
+            <div class="flex items-center justify-center gap-4">
+              <a :href="contact.linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent transition-all group">
                 <Linkedin class="w-5 h-5 text-slate-light group-hover:text-black" />
               </a>
-              <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent transition-all group">
+              <a :href="contact.whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent transition-all group">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-5 h-5 text-slate-light group-hover:text-black">
+                  <path d="M20.52 3.48A11.92 11.92 0 0 0 12.02 0C5.4 0 .02 5.38 0 12c0 2.11.55 4.17 1.6 5.99L0 24l6.17-1.58A11.95 11.95 0 0 0 12.01 24h.01c6.62 0 12-5.38 12-12 0-3.2-1.25-6.2-3.5-8.52zM12.02 21.9A9.9 9.9 0 0 1 7 20.53l-.36-.21-3.67.94.98-3.58-.24-.37A9.86 9.86 0 0 1 2.1 12C2.11 6.54 6.56 2.1 12.02 2.1c2.64 0 5.12 1.03 6.98 2.9a9.84 9.84 0 0 1 2.9 7c0 5.46-4.44 9.9-9.9 9.9zm5.43-7.42c-.3-.15-1.77-.87-2.04-.98-.27-.1-.46-.15-.66.15-.2.3-.76.98-.93 1.18-.17.2-.34.22-.63.08-.3-.15-1.24-.45-2.36-1.44a8.77 8.77 0 0 1-1.64-2.04c-.17-.3-.02-.45.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.66-1.6-.9-2.2-.24-.56-.48-.48-.66-.49h-.56c-.2 0-.53.07-.8.38-.27.3-1.04 1.02-1.04 2.5 0 1.48 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.08 4.5.7.3 1.26.48 1.68.61.7.22 1.35.19 1.86.11.56-.08 1.77-.72 2.03-1.42.25-.7.25-1.31.17-1.43-.08-.12-.28-.2-.58-.35z" />
+                </svg>
+              </a>
+              <a :href="contact.instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent transition-all group">
                 <Instagram class="w-5 h-5 text-slate-light group-hover:text-black" />
               </a>
             </div>
