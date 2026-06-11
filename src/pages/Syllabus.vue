@@ -115,16 +115,15 @@ const toggleExpand = (id: number) => {
                 </div>
               </button>
 
-              <AnimatePresence>
-                <Motion
-                  v-if="expandedId === sem.id"
-                  :initial="{ height: 0, opacity: 0 }"
-                  :animate="{ height: 'auto', opacity: 1 }"
-                  :exit="{ height: 0, opacity: 0 }"
-                  :transition="{ duration: 0.3, easing: [0.22, 1, 0.36, 1] }"
-                  class="overflow-hidden"
-                >
-                  <div class="px-6 pb-6 pt-5 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-6 bg-white/[0.01]">
+              <div 
+                class="grid transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                :class="expandedId === sem.id ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
+              >
+                <div class="overflow-hidden">
+                  <div 
+                    class="px-6 pb-6 pt-5 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-6 bg-white/[0.01] transition-all duration-300 transform"
+                    :class="expandedId === sem.id ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0'"
+                  >
                     <div class="max-w-md">
                       <p class="text-slate-light text-sm leading-relaxed mb-1">
                         Official curriculum and course contents approved by the university.
@@ -146,8 +145,8 @@ const toggleExpand = (id: number) => {
                       Open Syllabus PDF
                     </a>
                   </div>
-                </Motion>
-              </AnimatePresence>
+                </div>
+              </div>
             </div>
           </Motion>
         </AnimatePresence>

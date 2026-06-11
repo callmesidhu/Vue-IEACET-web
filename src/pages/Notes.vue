@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { Motion, Presence as AnimatePresence } from '@motionone/vue'
+import { Motion } from '@motionone/vue'
 import { FileText, ChevronDown, Search } from 'lucide-vue-next'
 import SchemeSelector from '../components/SchemeSelector.vue'
 import notesData from '../data/notes.json'
@@ -177,16 +177,15 @@ const openNoteLink = (url: string) => {
               </div>
             </button>
 
-            <AnimatePresence mode="wait">
-              <Motion
-                v-if="expandedSemester === sem.semester || isSearching"
-                :initial="{ height: 0, opacity: 0 }"
-                :animate="{ height: 'auto', opacity: 1 }"
-                :exit="{ height: 0, opacity: 0 }"
-                :transition="{ duration: 0.3, easing: [0.22, 1, 0.36, 1] }"
-                class="overflow-hidden"
-              >
-                <div class="px-8 pb-8 pt-4 border-t border-white/5 bg-white/[0.005]">
+            <div 
+              class="grid transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]"
+              :class="(expandedSemester === sem.semester || isSearching) ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
+            >
+              <div class="overflow-hidden">
+                <div 
+                  class="px-8 pb-8 pt-4 border-t border-white/5 bg-white/[0.005] transition-all duration-300 transform"
+                  :class="(expandedSemester === sem.semester || isSearching) ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0'"
+                >
                   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
                     <div
                       v-for="(subject, subIdx) in sem.subjects"
@@ -213,8 +212,8 @@ const openNoteLink = (url: string) => {
                     </div>
                   </div>
                 </div>
-              </Motion>
-            </AnimatePresence>
+              </div>
+            </div>
           </Motion>
         </div>
       </div>

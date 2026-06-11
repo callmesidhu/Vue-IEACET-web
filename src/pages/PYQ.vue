@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { Motion, Presence as AnimatePresence } from '@motionone/vue'
+import { Motion } from '@motionone/vue'
 import { History, Search, Download, ChevronDown } from 'lucide-vue-next'
 import pyqData from '../data/pyq.json'
 
@@ -137,16 +137,15 @@ const openPyqLink = (url: string) => {
               </div>
             </button>
 
-            <AnimatePresence mode="wait">
-              <Motion
-                v-if="isExpanded(semGroup.semester)"
-                :initial="{ height: 0, opacity: 0 }"
-                :animate="{ height: 'auto', opacity: 1 }"
-                :exit="{ height: 0, opacity: 0 }"
-                :transition="{ duration: 0.3, easing: [0.22, 1, 0.36, 1] }"
-                class="overflow-hidden"
-              >
-                <div class="px-6 pb-6 pt-4 border-t border-white/5 bg-white/[0.005]">
+            <div 
+              class="grid transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]"
+              :class="isExpanded(semGroup.semester) ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
+            >
+              <div class="overflow-hidden">
+                <div 
+                  class="px-6 pb-6 pt-4 border-t border-white/5 bg-white/[0.005] transition-all duration-300 transform"
+                  :class="isExpanded(semGroup.semester) ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0'"
+                >
                   <div class="grid sm:grid-cols-2 gap-4 mt-2">
                     <div
                       v-for="(sub, i) in semGroup.subjects"
@@ -166,8 +165,8 @@ const openPyqLink = (url: string) => {
                     </div>
                   </div>
                 </div>
-              </Motion>
-            </AnimatePresence>
+              </div>
+            </div>
           </Motion>
         </div>
       </div>
