@@ -146,7 +146,6 @@ const selectModel = (model: string) => {
           </div>
         </div>
       </Motion>
-      
     </div>
   </div>
 </template>

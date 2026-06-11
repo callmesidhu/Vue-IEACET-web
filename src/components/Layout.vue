@@ -22,6 +22,39 @@ const navLinks = [
   }
 ]
 
+const mouseX = ref(-100)
+const mouseY = ref(-100)
+const isHovering = ref(false)
+const isMouseInWindow = ref(false)
+const isTouchDevice = ref(false)
+
+const handleMouseMove = (e: MouseEvent) => {
+  mouseX.value = e.clientX
+  mouseY.value = e.clientY
+  isMouseInWindow.value = true
+
+  const target = e.target as HTMLElement
+  if (target) {
+    const isInteractive = 
+      target.tagName === 'A' || 
+      target.tagName === 'BUTTON' || 
+      target.closest('a') || 
+      target.closest('button') || 
+      target.closest('.cursor-pointer') ||
+      window.getComputedStyle(target).cursor === 'pointer'
+    
+    isHovering.value = !!isInteractive
+  }
+}
+
+const handleMouseLeave = () => {
+  isMouseInWindow.value = false
+}
+
+const handleMouseEnter = () => {
+  isMouseInWindow.value = true
+}
+
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50
   
@@ -33,10 +66,23 @@ const handleScroll = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  isTouchDevice.value = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0)
+  
+  if (!isTouchDevice.value) {
+    window.addEventListener('mousemove', handleMouseMove)
+    document.addEventListener('mouseleave', handleMouseLeave)
+    document.addEventListener('mouseenter', handleMouseEnter)
+  }
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  
+  if (!isTouchDevice.value) {
+    window.removeEventListener('mousemove', handleMouseMove)
+    document.removeEventListener('mouseleave', handleMouseLeave)
+    document.removeEventListener('mouseenter', handleMouseEnter)
+  }
 })
 
 watch(() => route.path, () => {
@@ -46,7 +92,7 @@ watch(() => route.path, () => {
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col relative">
+  <div class="min-h-screen flex flex-col relative" :class="{ 'custom-cursor-none': !isTouchDevice }">
     <!-- Navbar -->
     <header
       :class="[
@@ -254,5 +300,69 @@ watch(() => route.path, () => {
         <span class="inline-block">IEAGPT</span>
       </router-link>
     </transition>
+
+    <!-- Global Custom Rotating Gear Cursor -->
+    <div 
+      v-if="isMouseInWindow && !isTouchDevice"
+      class="fixed pointer-events-none z-[9999]"
+      :style="{
+        left: `${mouseX}px`,
+        top: `${mouseY}px`,
+        transform: 'translate(-50%, -50%)'
+      }"
+    >
+      <!-- Scale and hover transition wrapper -->
+      <div 
+        class="transition-transform duration-300"
+        :style="{
+          transform: `scale(${isHovering ? 1.25 : 1})`
+        }"
+      >
+        <!-- Rotation wrapper SVG -->
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          class="w-6 h-6 transition-colors duration-300"
+          :class="[
+            isHovering ? 'text-accent' : 'text-zinc-400',
+            isHovering ? 'gear-rotate-fast' : 'gear-rotate-slow'
+          ]"
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          stroke-width="2.2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"
+        >
+          <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+      </div>
+    </div>
   </div>
 </template>
+
+<style scoped>
+.custom-cursor-none {
+  cursor: none !important;
+}
+.custom-cursor-none :deep(*) {
+  cursor: none !important;
+}
+
+@keyframes keyframe-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.gear-rotate-slow {
+  animation: keyframe-spin 4s linear infinite;
+}
+
+.gear-rotate-fast {
+  animation: keyframe-spin 1.2s linear infinite;
+}
+</style>
