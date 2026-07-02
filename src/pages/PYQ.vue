@@ -13,7 +13,10 @@ const searchQuery = ref('')
 
 const isSearching = computed(() => searchQuery.value.length > 0)
 
-const semesters = computed(() => activeScheme.value === '2024' ? pyqData.semesters : [])
+const currentSchemeData = computed(() => 
+  pyqData.pyq.find(s => s.scheme === activeScheme.value)
+)
+const semesters = computed(() => currentSchemeData.value ? currentSchemeData.value.semesters : [])
 
 const filteredSemesters = computed(() => {
   const list = semesters.value
@@ -99,7 +102,7 @@ const handleSchemeChange = (scheme: Scheme) => {
               :transition="{ duration: 0.2 }"
               class="space-y-4"
             >
-              <!-- Will be updated soon (2019 Scheme Placeholder) -->
+              <!-- Will be updated soon (Placeholder) -->
               <div v-if="semesters.length === 0" class="border border-zinc-800 bg-zinc-900/30 rounded-xl p-16 text-center shadow-sm relative overflow-hidden">
                 <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 mb-6 text-zinc-400">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -108,7 +111,7 @@ const handleSchemeChange = (scheme: Scheme) => {
                 </div>
                 <h3 class="text-lg font-sans font-semibold text-zinc-200 mb-2">Will be updated soon</h3>
                 <p class="text-zinc-400 text-sm max-w-sm mx-auto leading-relaxed">
-                  Question papers for the 2019 Scheme are currently being compiled and will be uploaded soon.
+                  Question papers for the {{ activeScheme }} Scheme are currently being compiled and will be uploaded soon.
                 </p>
               </div>
 

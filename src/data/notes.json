@@ -120,6 +120,207 @@
           ]
         }
       ]
+    },
+    {
+      "scheme": "2019",
+      "semesters": [
+        {
+          "semester": "S1",
+          "subjects": [
+            {
+              "name": "Basic Civil and Mechanical",
+              "link": "https://drive.google.com/drive/folders/15MV0_HFfW3t7GWZKGFAeSaJCJ5wIPFcR?usp=drive_link"
+            },
+            {
+              "name": "Programming in C",
+              "link": "https://drive.google.com/drive/folders/1LdAxraNFjQ3i26Jml43O1oevzoTQkE80?usp=drive_link"
+            },
+            {
+              "name": "Mathematics",
+              "link": "https://drive.google.com/drive/folders/1ITkhofzlBSCnXSY7yP17rLMTDH3RSqYw?usp=drive_link"
+            },
+            {
+              "name": "Engineering Physics",
+              "link": "https://drive.google.com/drive/folders/1pGtCk8DMRnyeSHrII6Yr-SZov4GhbTdK?usp=drive_link"
+            },
+            {
+              "name": "Professional Communication",
+              "link": "https://drive.google.com/drive/folders/1wY0uDkLTyaUpfLkTUCKgOee62JeP-qZZ?usp=drive_link"
+            }
+          ]
+        },
+        {
+          "semester": "S2",
+          "subjects": [
+            {
+              "name": "Mathematics",
+              "link": "https://drive.google.com/drive/folders/1nYhC_ZUEiwV-y2gnPjmAq0WcrQ5xgkkK?usp=drive_link"
+            },
+            {
+              "name": "Life Skills",
+              "link": "https://drive.google.com/drive/folders/1ojdZZTn9hu6dFbmTCScQV1gpEDmjD8bF?usp=drive_link"
+            },
+            {
+              "name": "Engineering Mechanics",
+              "link": "https://drive.google.com/drive/folders/1DgCSfhFqmyigVWS1aYTRDqs4_C2UwXaE?usp=drive_link"
+            },
+            {
+              "name": "Engineering Graphics",
+              "link": "https://drive.google.com/drive/folders/1toqgJMawj9yc34jBpz87BmaRAgOZthbI?usp=drive_link"
+            },
+            {
+              "name": "Chemistry",
+              "link": "https://drive.google.com/drive/folders/1g_STU-jfDPmSbi6a4zEC-NapJxGgngen?usp=drive_link"
+            },
+            {
+              "name": "BEC and BEE",
+              "link": "https://drive.google.com/drive/folders/1WwIRuP-0OFEmqhGJXwlIPHZyxcsfiqGP?usp=drive_link"
+            }
+          ]
+        },
+        {
+          "semester": "S3",
+          "subjects": [
+            {
+              "name": "TMD",
+              "link": "https://drive.google.com/drive/folders/15Loq5RhNlnJVY2-bCSg3uds_LqgaAdpJ?usp=drive_link"
+            },
+            {
+              "name": "MMP",
+              "link": "https://drive.google.com/drive/folders/12wdbzDieUxRw2ihoK4ibvEWk3WdTsMen?usp=drive_link"
+            },
+            {
+              "name": "Mathematics",
+              "link": "https://drive.google.com/drive/folders/18XLezYb4kDnGygRoHEVu7pFQ7_oMX16N?usp=drive_link"
+            },
+            {
+              "name": "FMHM",
+              "link": "https://drive.google.com/drive/folders/12K2VWfSvqDTT-vG5rQQXF2R2gWAhWV3i?usp=drive_link"
+            },
+            {
+              "name": "DE",
+              "link": "https://drive.google.com/drive/folders/1-X9b5sQz7kPZ_SYHf-MkCCr0OnEDWKfO?usp=drive_link"
+            }
+          ]
+        },
+        {
+          "semester": "S4",
+          "subjects": [
+            {
+              "name": "MTDM",
+              "link": "https://drive.google.com/drive/folders/1l-WmIzG7Rx8W_t4VFUGerUZJS446cfhH?usp=drive_link"
+            },
+            {
+              "name": "WSD",
+              "link": ""
+            },
+            {
+              "name": "Professional Ethics",
+              "link": ""
+            },
+            {
+              "name": "COI",
+              "link": ""
+            },
+            {
+              "name": "OM",
+              "link": ""
+            },
+            {
+              "name": "Mathematics",
+              "link": ""
+            }
+          ]
+        },
+        {
+          "semester": "S5",
+          "subjects": [
+            {
+              "name": "TE Thermal Engineering",
+              "link": "https://drive.google.com/drive/folders/1r-DDkVhe5PE-m7bnnJMDpWaJVO-_Ar8_?usp=drive_link"
+            },
+            {
+              "name": "SCLM",
+              "link": "https://drive.google.com/drive/folders/1r1SbjoEnHPsSqys-peimUPQ0C_C9ksXe?usp=drive_link"
+            },
+            {
+              "name": "OR",
+              "link": "https://drive.google.com/drive/folders/1r337YHRcODE-lRu2Gk4SMMhVQU6kmn3p?usp=drive_link"
+            },
+            {
+              "name": "OOP",
+              "link": "https://drive.google.com/drive/folders/1r5axbjFle90bJEtQqX9LSkrkS0tSqxa0?usp=drive_link"
+            }
+          ]
+        },
+        {
+          "semester": "S6",
+          "subjects": [
+            {
+              "name": "SMS",
+              "link": "https://drive.google.com/drive/folders/1HD2aeuExodTTY0o2eKJi79__P_NS6zqt?usp=drive_link"
+            },
+            {
+              "name": "SIM Lab",
+              "link": "https://drive.google.com/drive/folders/1NFGW9G_jluaBJaQ35trRvcNTICLwbojl?usp=drive_link"
+            },
+            {
+              "name": "MOP",
+              "link": "https://drive.google.com/drive/folders/1GDFIwEHh7zZR0RysbxhoSnhOaVGnJ2tX?usp=drive_link"
+            },
+            {
+              "name": "MFE",
+              "link": "https://drive.google.com/drive/folders/15gyomDpOSNoOf_Ex7TiSlZgqpUatvbkF?usp=drive_link"
+            },
+            {
+              "name": "DA Lab",
+              "link": "https://drive.google.com/drive/folders/1pyUVqPXXZfgpgy82Tmg5JIlu-Ibu6T3s?usp=drive_link"
+            },
+            {
+              "name": "DA",
+              "link": "https://drive.google.com/drive/folders/1OGMa5THX0aRKWqDgmdj9w7TxvT-ej_-p?usp=drive_link"
+            },
+            {
+              "name": "Automobile Engineering Elective",
+              "link": "https://drive.google.com/drive/folders/1OTlgIaPqYaDm3IxZlg1b4yemEmqpX1UU?usp=drive_link"
+            },
+            {
+              "name": "AOR",
+              "link": "https://drive.google.com/drive/folders/1Ajfb6cCwXqayPpCuCgSRSNdJIx1dDIsf?usp=drive_link"
+            }
+          ]
+        },
+        {
+          "semester": "S7",
+          "subjects": [
+            {
+              "name": "Quality Engineering",
+              "link": "https://drive.google.com/drive/folders/1jsnna_PsAKIOdfSmGnPszgTy5507PBfS?usp=drive_link"
+            }
+          ]
+        },
+        {
+          "semester": "S8",
+          "subjects": [
+            {
+              "name": "Total Quality Management and Six Sigma",
+              "link": "https://drive.google.com/drive/folders/1HtX4ShqCE2ywLMVsHyJpAAsGArR7Hkyh?usp=drive_link"
+            },
+            {
+              "name": "Technology Management",
+              "link": "https://drive.google.com/drive/folders/1kC2FLeM4W-q550mP-KB-Cp2ueUSlxUFD?usp=drive_link"
+            },
+            {
+              "name": "Risk Analysis",
+              "link": "https://drive.google.com/drive/folders/1k57ici7D2cjXawYQ_hkvlrOvYAqyGJrO?usp=drive_link"
+            },
+            {
+              "name": "Applied Ergonomics",
+              "link": "https://drive.google.com/drive/folders/1kdLHC59jWQYv7Ab3d6_DizooQCAXFDG-?usp=drive_link"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

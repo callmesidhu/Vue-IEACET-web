@@ -6,22 +6,127 @@
         {
           "id": 1,
           "title": "Semester 1",
-          "syllabus": "https://drive.google.com/file/d/1To0FC1u0Q86ewkaTnsYGdMfNAPxh08Pw/view"
+          "files": [
+            {
+              "name": "Full Syllabus",
+              "link": "https://drive.google.com/file/d/1To0FC1u0Q86ewkaTnsYGdMfNAPxh08Pw/view"
+            }
+          ]
         },
         {
           "id": 2,
           "title": "Semester 2",
-          "syllabus": "https://drive.google.com/file/d/1bKpZvlIaF4Dq5lTbw4-GM3L-xcXo2QuT/view"
+          "files": [
+            {
+              "name": "Full Syllabus",
+              "link": "https://drive.google.com/file/d/1bKpZvlIaF4Dq5lTbw4-GM3L-xcXo2QuT/view"
+            }
+          ]
         },
         {
           "id": 3,
           "title": "Semester 3",
-          "syllabus": "https://drive.google.com/file/d/1pMT8Y-_1JB4UfKTBnbGNdw_Alj1QGCGV/view"
+          "files": [
+            {
+              "name": "Full Syllabus",
+              "link": "https://drive.google.com/file/d/1pMT8Y-_1JB4UfKTBnbGNdw_Alj1QGCGV/view"
+            }
+          ]
         },
         {
           "id": 4,
           "title": "Semester 4",
-          "syllabus": "https://drive.google.com/file/d/1eIX3Qo3TSL8xLG6d0QxoHK59SI4Jaxmi/view"
+          "files": [
+            {
+              "name": "Full Syllabus",
+              "link": "https://drive.google.com/file/d/1eIX3Qo3TSL8xLG6d0QxoHK59SI4Jaxmi/view"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2019",
+      "semesters": [
+        {
+          "id": 1,
+          "title": "Semester 1",
+          "files": [
+            {
+              "name": "BCM",
+              "link": "https://drive.google.com/file/d/1N9QE8oHsqtRejyGlcEWEbNQSCTEugaZA/view?usp=drive_link"
+            },
+            {
+              "name": "PRC",
+              "link": "https://drive.google.com/file/d/176bkyZiGremLHcV56_qSSTnGSq3wRJym/view?usp=drive_link"
+            },
+            {
+              "name": "LAC",
+              "link": "https://drive.google.com/file/d/1PGYm_yNSOyAmUP8F-e_ega7iOdHwMQJ7/view?usp=drive_link"
+            },
+            {
+              "name": "EP-B",
+              "link": "https://drive.google.com/file/d/1TwfLZdJoUPeilxIMZMJte80ayJgkWQ4N/view?usp=drive_link"
+            },
+            {
+              "name": "PC",
+              "link": "https://drive.google.com/file/d/10jrSxTjyQIUg0qR0p-qJUJmVjMz_SWoK/view?usp=drive_link"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Semester 2",
+          "files": [
+            {
+              "name": "LS",
+              "link": "https://drive.google.com/file/d/1rB2zm__LDR0Hv7UOBFxdJ4R_03e5kH0Q/view?usp=drive_link"
+            },
+            {
+              "name": "EM",
+              "link": "https://drive.google.com/file/d/13-_7j6I5DGnJCWahjkCOAd-2VC0Dg3Jt/view?usp=drive_link"
+            },
+            {
+              "name": "VCDE",
+              "link": "https://drive.google.com/file/d/1rHa2fKS6u8pKlXTTPg2iK4Ex0cYUBDaL/view?usp=drive_link"
+            },
+            {
+              "name": "EG",
+              "link": "https://drive.google.com/file/d/1hn17cTda5xIMd4lB0NTk9sXjwA33BiAT/view?usp=drive_link"
+            },
+            {
+              "name": "EC",
+              "link": "https://drive.google.com/file/d/1WKbCWrzLiZG_Lxe2yndBl-xurTFBSJJY/view?usp=drive_link"
+            },
+            {
+              "name": "BEE",
+              "link": "https://drive.google.com/file/d/1YWfYq_qRDw9oW-kaZfCfhMfQ_6VPMPdE/view?usp=drive_link"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Semester 3",
+          "files": [
+            {
+              "name": "DE",
+              "link": "https://drive.google.com/drive/folders/127eXLqPR81GxgWnggQJaJ1jdI77JsuS8?usp=drive_link"
+            },
+            {
+              "name": "TMD",
+              "link": "https://drive.google.com/file/d/17-LPug9HnOjQtRdu_qBSoqs7A9Br75np/view?usp=drive_link"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "title": "Semester 6",
+          "files": [
+            {
+              "name": "FULL",
+              "link": "https://drive.google.com/drive/folders/1WxuTgDsFYNV8t8Rzu0RQND4w1b1u45_d?usp=drive_link"
+            }
+          ]
         }
       ]
     }

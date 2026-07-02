@@ -66,7 +66,7 @@ const toggleExpand = (id: number) => {
               </div>
               <h3 class="text-lg font-sans font-semibold text-zinc-200 mb-2">Will be updated soon</h3>
               <p class="text-zinc-400 text-sm max-w-sm mx-auto leading-relaxed">
-                We are currently compiling and verifying the official resource files for the 2019 Scheme. Please check back shortly.
+                We are currently compiling and verifying the official resource files for the {{ activeScheme }} Scheme. Please check back shortly.
               </p>
             </div>
             
@@ -115,7 +115,7 @@ const toggleExpand = (id: number) => {
                 >
                   <div class="overflow-hidden">
                     <div 
-                      class="px-8 py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-6 bg-zinc-950/40"
+                      class="px-8 py-6 flex flex-col sm:flex-row sm:items-start justify-between gap-6 bg-zinc-950/40"
                     >
                       <div class="max-w-md">
                         <p class="text-zinc-400 text-sm leading-relaxed mb-1.5">
@@ -126,17 +126,21 @@ const toggleExpand = (id: number) => {
                           <span class="inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-mono font-medium bg-zinc-900/80 text-zinc-400 border border-zinc-800">Verified</span>
                         </div>
                       </div>
-                      <a
-                        :href="sem.syllabus"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-100 text-zinc-950 font-medium hover:bg-zinc-200 active:scale-[0.98] transition-all text-xs w-full sm:w-auto shadow-sm"
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                        Open Syllabus
-                      </a>
+                      <div class="flex flex-wrap gap-3 w-full sm:w-auto justify-start sm:justify-end">
+                        <a
+                          v-for="file in sem.files"
+                          :key="file.name"
+                          :href="file.link"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-100 text-zinc-950 font-medium hover:bg-zinc-200 active:scale-[0.98] transition-all text-xs flex-1 sm:flex-none shadow-sm min-w-[120px]"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                          {{ file.name === 'FULL' || file.name === 'Full Syllabus' ? 'Open Syllabus' : file.name }}
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
