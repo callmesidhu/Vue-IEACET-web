@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import { Motion } from '@motionone/vue'
 import { History, Search, Download, ChevronDown } from 'lucide-vue-next'
 import SchemeSelector from '../components/SchemeSelector.vue'
-import pyqData from '../data/pyq.json'
+import { usePyqs } from '../composables/useGoogleSheets'
 
 type Scheme = '2024' | '2019'
 
@@ -13,8 +13,10 @@ const searchQuery = ref('')
 
 const isSearching = computed(() => searchQuery.value.length > 0)
 
-const currentSchemeData = computed(() => 
-  pyqData.pyq.find(s => s.scheme === activeScheme.value)
+const { pyq, loading, error } = usePyqs()
+
+const currentSchemeData = computed(() =>
+  pyq.value.find(s => s.scheme === activeScheme.value)
 )
 const semesters = computed(() => currentSchemeData.value ? currentSchemeData.value.semesters : [])
 
@@ -93,7 +95,18 @@ const handleSchemeChange = (scheme: Scheme) => {
         </Motion>
 
         <div class="max-w-5xl mx-auto">
-          <AnimatePresence mode="wait">
+          <!-- Loading state -->
+          <div v-if="loading" class="flex items-center justify-center py-24">
+            <svg class="animate-spin h-8 w-8 text-zinc-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+            </svg>
+          </div>
+          <!-- Error state -->
+          <div v-else-if="error" class="border border-red-800/50 bg-red-900/10 rounded-xl p-10 text-center">
+            <p class="text-red-400 text-sm">Failed to load PYQ data. Please try again later.</p>
+          </div>
+          <AnimatePresence v-else mode="wait">
             <Motion
               :key="activeScheme"
               :initial="{ opacity: 0, y: 10 }"

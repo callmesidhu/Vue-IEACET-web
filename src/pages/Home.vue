@@ -15,8 +15,7 @@ import {
   Instagram
 } from 'lucide-vue-next'
 import ThreeBackground from '../components/ThreeBackground.vue'
-import placementData from '../data/placements.json'
-import scholarshipData from '../data/scholarships.json'
+import { usePlacements, useScholarships } from '../composables/useGoogleSheets'
 
 const scrollRef = ref<HTMLDivElement | null>(null)
 
@@ -75,8 +74,8 @@ const resources = [
   }
 ]
 
-const placements = placementData.placements
-const scholarships = scholarshipData.scholarships
+const { placements } = usePlacements()
+const { scholarships } = useScholarships()
 
 const contacts = [
   {
@@ -275,6 +274,13 @@ const contacts = [
           @mouseenter="pause"
           @mouseleave="resume"
         >
+          <!-- Loading skeleton -->
+          <template v-if="placements.length === 0">
+            <div v-for="i in 8" :key="i" class="flex-shrink-0 w-56 p-8 border border-white/10 bg-black/20 backdrop-blur-sm animate-pulse">
+              <div class="h-6 bg-white/10 rounded mb-3 w-3/4"></div>
+              <div class="h-10 bg-white/5 rounded w-1/2"></div>
+            </div>
+          </template>
           <div
             v-for="(item, index) in [...placements, ...placements]"
             :key="index"
@@ -314,23 +320,31 @@ const contacts = [
           style="max-height: 420px; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.2) transparent"
         >
           <div class="space-y-4">
+            <!-- Loading skeleton -->
+            <template v-if="scholarships.length === 0">
+              <div v-for="i in 5" :key="i" class="p-6 border border-white/10 bg-black/20 animate-pulse">
+                <div class="h-5 bg-white/10 rounded w-1/3 mb-2"></div>
+                <div class="h-4 bg-white/5 rounded w-2/3"></div>
+              </div>
+            </template>
             <Motion
               v-for="(item, index) in scholarships"
               :key="index"
               as="a"
-              :href="item.link"
-              target="_blank"
-              rel="noopener noreferrer"
+              :href="item.link || undefined"
+              :target="item.link ? '_blank' : undefined"
+              :rel="item.link ? 'noopener noreferrer' : undefined"
               :initial="{ opacity: 0, x: -20 }"
               :in-view="{ opacity: 1, x: 0 }"
               :viewport="{ once: true }"
               :transition="{ delay: index * 0.05 }"
               class="flex flex-col md:flex-row md:items-center justify-between p-6 border border-white/10 bg-black/20 backdrop-blur-sm hover:border-accent hover:bg-accent/5 transition-all group"
+              :class="{ 'cursor-default': !item.link }"
             >
               <div class="md:w-1/3 mb-3 md:mb-0">
                 <h3 class="text-lg font-display font-bold text-white group-hover:text-accent transition-colors flex items-center gap-2">
                   {{ item.title }}
-                  <ExternalLink class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <ExternalLink v-if="item.link" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </h3>
               </div>
               <div class="md:w-2/3 md:pl-8 md:border-l border-white/10">

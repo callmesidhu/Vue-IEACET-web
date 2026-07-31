@@ -3,15 +3,17 @@ import { ref, computed } from 'vue'
 import { Motion, Presence as AnimatePresence } from '@motionone/vue'
 import { ChevronDown, BookOpen } from 'lucide-vue-next'
 import SchemeSelector from '../components/SchemeSelector.vue'
-import syllabusData from '../data/syllabus.json'
+import { useSyllabus } from '../composables/useGoogleSheets'
 
 type Scheme = '2024' | '2019'
 
 const activeScheme = ref<Scheme>('2024')
 const expandedId = ref<number | null>(null)
 
-const currentSchemeData = computed(() => 
-  syllabusData.schemes.find(s => s.year === activeScheme.value)
+const { schemes, loading, error } = useSyllabus()
+
+const currentSchemeData = computed(() =>
+  schemes.value.find(s => s.year === activeScheme.value)
 )
 const semesters = computed(() => currentSchemeData.value ? currentSchemeData.value.semesters : [])
 
@@ -48,7 +50,18 @@ const toggleExpand = (id: number) => {
       </Motion>
 
       <div class="max-w-5xl mx-auto">
-        <AnimatePresence mode="wait">
+        <!-- Loading state -->
+        <div v-if="loading" class="flex items-center justify-center py-24">
+          <svg class="animate-spin h-8 w-8 text-zinc-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+          </svg>
+        </div>
+        <!-- Error state -->
+        <div v-else-if="error" class="border border-red-800/50 bg-red-900/10 rounded-xl p-10 text-center">
+          <p class="text-red-400 text-sm">Failed to load syllabus data. Please try again later.</p>
+        </div>
+        <AnimatePresence v-else mode="wait">
           <Motion
             :key="activeScheme"
             :initial="{ opacity: 0, y: 10 }"
