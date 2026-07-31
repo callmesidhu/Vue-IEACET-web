@@ -69,7 +69,7 @@ const selectModel = (model: string) => {
           >
             <Lock class="w-12 h-12 text-zinc-700 mx-auto mb-4" />
             <h2 class="text-xl font-display font-semibold text-zinc-300 mb-2 tracking-wide">IEAGPT is Coming Soon</h2>
-            <p class="text-sm text-zinc-500 max-w-xs mx-auto">We are fine-tuning our specialized models to bring you the best academic assistant.</p>
+            <p class="text-sm text-zinc-500 max-w-xs mx-auto">We are fine-tuning our specialized XyphX-edu models to bring you the best academic assistant.</p>
           </Motion>
         </div>
         
