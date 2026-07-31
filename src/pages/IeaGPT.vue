@@ -96,8 +96,8 @@ const selectModel = (model: string) => {
                 @click="isDropdownOpen = !isDropdownOpen"
                 class="flex items-center justify-between gap-1.5 sm:gap-2 bg-[#2f2f2f] hover:bg-[#3f3f3f] transition-colors cursor-pointer rounded-full px-2.5 sm:px-3.5 py-1.5 text-[11px] sm:text-xs text-zinc-300 font-medium border border-zinc-700/50 whitespace-nowrap flex-shrink-0 min-w-[110px] sm:min-w-[150px]"
               >
-                <span v-if="selectedModel === 'fast'">XyphX 1.0 Fast</span>
-                <span v-else>XyphX 1.0 Thinking</span>
+                <span v-if="selectedModel === 'fast'">XyphX 1.0 edu-Fast</span>
+                <span v-else>XyphX 1.0 edu-Thinking</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 transition-transform duration-200 flex-shrink-0" :class="{ 'rotate-180': isDropdownOpen }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
