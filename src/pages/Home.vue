@@ -97,7 +97,7 @@ const contacts = [
     role: 'Web Lead',
     linkedin: 'https://www.linkedin.com/in/callmesidhu/',
     whatsapp: 'https://wa.me/919494225620',
-    instagram: 'https://www.linkedin.com/in/callmesidhu/'
+    instagram: 'https://www.instagram.com/callmesidhu.x'
   }
 ]
 </script>
